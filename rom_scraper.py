@@ -24,7 +24,7 @@ def main():
         f_name = file.split('/')[-1]
         req = requests.get(file, stream=True)
         total_length = int(req.headers.get('content-length'))
-        with open(f'F:/nes_games/{f_name}', 'wb') as f:
+        with open(f'F:/gc_games/{f_name}', 'wb') as f:
              for chunk in progress.bar(req.iter_content(chunk_size=1024), expected_size=(total_length)+1):
                 if chunk:
                   f.write(chunk)
